@@ -7,6 +7,9 @@ import { App } from './app/modules';
 import { Provider } from 'react-redux';
 import { configureAppStore } from './store/configureStore';
 
+// css
+import 'asset/css/global.scss';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,12 +17,11 @@ const root = ReactDOM.createRoot(
 const store = configureAppStore();
 
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+        <App />
+    </Provider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

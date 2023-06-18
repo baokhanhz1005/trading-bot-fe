@@ -1,12 +1,5 @@
 
 export const ROUTES = {
-    LOGIN: {
-        key: 'login',
-        name: 'Login',
-        path: '/login',
-        exact: true,
-        isPrivate: false,
-    },
     DASHBOARD: {
         key: 'dashboard',
         name: 'DashBoard',
@@ -14,11 +7,18 @@ export const ROUTES = {
         exact: true,
         isPrivate: false,
     },
+    LOGIN: {
+        key: 'login',
+        name: 'Login',
+        path: '/login',
+        exact: false,
+        isPrivate: false,
+    },
     GENERAL: {
         key: 'general',
         name: 'General',
-        path: '/1200001/general',
-        exact: false,
+        path: '/:userId/general',
+        exact: true,
         isPrivate: false,
     }
 }

@@ -4,7 +4,6 @@ import { Switch, Route, BrowserRouter as Router, Redirect, useLocation } from 'r
 import routes from './routes';
 import { GlobalStyle } from '../styles/global-styles';
 
-
 export function App() {
     return (
         <Router>
@@ -15,10 +14,9 @@ export function App() {
                     if (false) { // handle private 
                         return <></>
                     }
-                    return <Route key={key} path={path} exact={exact} component={component} />
+                    return <Route key={path} path={path} exact={exact} component={component} />
                 })}
                 <Redirect to={'/'} />
-
             </Switch>
             <GlobalStyle />
         </Router>
