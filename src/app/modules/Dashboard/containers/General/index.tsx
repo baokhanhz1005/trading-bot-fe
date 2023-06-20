@@ -7,7 +7,7 @@ import SidebarPanel from "app/components/Organisms/Sidebar";
 export const General: React.FC<TGeneral> = props => {
     return (
         <WrapperGeneral>
-            <div className="d-flex">
+            <div className="d-flex h-100">
                 <SidebarPanel />
                 <div className="d-flex flex-1">
                     This is a general Page

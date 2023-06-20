@@ -13,7 +13,6 @@ type TDashboardCombineRedux = DashboardProps & PropsTypeRedux;
 
 const Dashboard: React.FC<TDashboardCombineRedux> = props => {
     const { userInfo } = props;
-    console.log('will handle', props)
     const userId = userInfo.userId || '';
 
     const url = getLinkFromKey(ROUTES.GENERAL.key, { userId }) || '';
