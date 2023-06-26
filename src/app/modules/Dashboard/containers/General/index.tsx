@@ -2,6 +2,11 @@ import React from "react";
 import { TGeneral } from "./type";
 import { WrapperGeneral } from "./styles";
 import SidebarPanel from "app/components/Organisms/Sidebar";
+import Header from "app/components/Organisms/Header";
+import { WrapperModule } from "../../styled";
+import { Text } from "app/components/Atoms";
+import BlockItemGeneral from "./components/BlockItemGeneral";
+import BlockRevenue from "./components/BlockRevenue";
 
 
 export const General: React.FC<TGeneral> = props => {
@@ -9,9 +14,13 @@ export const General: React.FC<TGeneral> = props => {
         <WrapperGeneral>
             <div className="d-flex h-100">
                 <SidebarPanel />
-                <div className="d-flex flex-1">
-                    This is a general Page
-
+                <div className="d-flex flex-1" style={{ flexDirection: 'column' }}>
+                    <Header />
+                    <WrapperModule>
+                        <Text padding="10px 0" fontWeight='bold' size="30px" color="#fff">General</Text>
+                        <BlockItemGeneral />
+                        <BlockRevenue />
+                    </WrapperModule>
                 </div>
             </div>
         </WrapperGeneral>

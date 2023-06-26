@@ -41,6 +41,7 @@ export const HeaderSideBar = styled.div`
   width: 100%;
   align-items: center;
   padding: 10px 20px;
+  height: 3rem;
 `;
 
 export const WrapperChannel = styled.div``

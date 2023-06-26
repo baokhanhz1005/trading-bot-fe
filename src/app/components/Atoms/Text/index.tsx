@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 type TText = {
-    children: string,
+    children: any,
     color?: string,
     size?: string,
     margin?: string,
@@ -10,6 +10,7 @@ type TText = {
     type?: string | 'block' | 'inline-block' | 'inline',
     fontWeight?: string | number,
     style?: React.CSSProperties,
+    className?: string,
 };
 export const Text: React.FC<TText> = props => {
     const { children, ...restOf } = props
@@ -22,8 +23,8 @@ export const Text: React.FC<TText> = props => {
 
 Text.defaultProps = {
     type: 'block',
-    color: '#000',
-    size: '12px',
+    color: 'inherit',
+    size: 'inherit',
 }
 
 const StyledText = styled.div<TText>`

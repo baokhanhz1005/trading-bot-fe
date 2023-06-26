@@ -6,8 +6,8 @@ import { SvgIcon } from '@material-ui/core';
 
 type TIcon = {
   type: string,
-  size: string,
-  color: string,
+  size?: string,
+  color?: string,
   style?: React.CSSProperties,
 };
 
@@ -31,6 +31,6 @@ export const Icon: React.FC<TIcon> = (props) => {
 };
 
 Icon.defaultProps = {
-  color: '#000',
-  size: '12px',
+  color: 'inherit',
+  size: 'inherit',
 }
