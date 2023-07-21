@@ -1,12 +1,13 @@
 import { createSelector } from "reselect";
 import { MODULE_CONFIG } from "./config";
 import { initialState } from "./reducer";
+import { RootState } from "types";
 
-const selectMainAccountLogin = (state: any) =>
-  state ? state[MODULE_CONFIG.key] : initialState();
+const selectMainAccountLogin = (state: RootState) =>
+  state ? state.account : initialState();
 
 const makeSelectUserAccount = () =>
-  createSelector(selectMainAccountLogin, (substate) => substate.user);
+  createSelector(selectMainAccountLogin, (substate: any) => substate.user);
 
 export default selectMainAccountLogin;
 

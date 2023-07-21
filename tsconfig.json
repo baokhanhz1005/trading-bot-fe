@@ -20,8 +20,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
+    "types": ["redux-saga"]
   },
-  "include": [
+    "include": [
     "src"
   ]
 }

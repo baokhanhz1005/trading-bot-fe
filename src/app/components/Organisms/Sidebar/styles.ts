@@ -3,12 +3,13 @@ import avatar from "asset/avatar/avatar-2.jpg";
 import logo from "asset/favi/icon-sidebar.png";
 
 export const SidebarContainer = styled.div`
-  width: 18%;
+  width: 19%;
   height: 100%;
   background-color: #181745;
   transition: width 500ms ease;
   box-shadow: 1px 0px 10px 0 #000;
-
+  margin-right: 10px;
+  
   &.close {
     width: 50px;
   }

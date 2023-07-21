@@ -1,3 +1,7 @@
+import axios from "axios";
+import { API_URL } from "configs/common";
+import { getToken } from "./common";
+
 export class ResponseError extends Error {
   public response: Response;
 
@@ -44,8 +48,37 @@ function checkStatus(response: Response) {
  *
  * @return {object}           The response data
  */
-export async function request(url: string, options?: RequestInit): Promise<{} | { err: ResponseError }> {
+export async function request(
+  url: string,
+  options?: RequestInit
+): Promise<{} | { err: ResponseError }> {
   const fetchResponse = await fetch(url, options);
   const response = checkStatus(fetchResponse);
   return parseJSON(response);
+}
+
+export const callApiWithAuth = ({
+  endpoint = '',
+  method = "GET",
+  body,
+  extend = {},
+  domain = API_URL,
+}: any) => {
+
+  const apiToken = getToken();
+
+  const headers = {
+    'Content-Type': 'application/json; charset=utf-8',
+    token: apiToken
+  }
+  return axios({
+    url: `${domain}/${endpoint}`,
+    method,
+    data: body,
+    headers,
+  });
+};
+
+export const callApiWithOutAuth = ({}) => {
+
 }

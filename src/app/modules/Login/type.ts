@@ -14,3 +14,8 @@ export type TState = {
         errors: string[],
     }
 };
+
+export type RootStateLogin = {
+    user: TState,
+    isLoggingIn: boolean,
+}

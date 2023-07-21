@@ -21,6 +21,8 @@ const publicUrlOrPath = getPublicUrlOrPath(
   process.env.PUBLIC_URL
 );
 
+const appHtml = process.env.NODE_ENV === 'development' ? 'public/index.development.html' : 'public/index.html';
+
 const buildPath = process.env.BUILD_PATH || 'build';
 
 const moduleFileExtensions = [
@@ -56,7 +58,7 @@ module.exports = {
   appPath: resolveApp('.'),
   appBuild: resolveApp(buildPath),
   appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appHtml: resolveApp(appHtml),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),

@@ -1,7 +1,6 @@
 import { ROUTES } from "../../../constants/routes";
 import { Routes } from "../../../types";
-import { General } from "./containers/General";
-
+import General from "./containers/General";
 
 
 const routes: Routes = [
